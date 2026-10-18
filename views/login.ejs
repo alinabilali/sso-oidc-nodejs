@@ -1,0 +1,75 @@
+<!-- views/login.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        font-family: 'Courier New', Courier, monospace;
+      }
+
+      h2 {
+        margin-bottom: 20px;
+      }
+
+      .button-container {
+        display: flex;
+        gap: 10px;
+      }
+
+      a.button,
+      button {
+        padding: 10px;
+        font-size: 16px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        border: none;
+        font-family: 'Courier New', Courier, monospace;
+        color: #fff;
+      }
+
+      a.button {
+        background-color: #007bff;
+      }
+
+      button {
+        background-color: #28a745;
+      }
+    </style>
+  </head>
+  <body>
+    <% if (typeof error !== 'undefined') { %>
+    <p style="color: red"><%= error %></p>
+    <% } %> <% if (typeof string !== 'undefined') { %>
+    <p style="color: red"><%= message %></p>
+    <% } %>
+    <h2>Login Page</h2>
+
+    <form action="/login" method="post" style="text-align: center">
+      <div>
+        <label>
+          Username:
+          <input type="text" name="username" required />
+        </label>
+      </div>
+      <br />
+      <div>
+        <label>
+          Password:
+          <input type="password" name="password" required />
+        </label>
+      </div>
+      <br /><br />
+      <button type="submit">Login</button>
+    </form>
+  </body>
+</html>
