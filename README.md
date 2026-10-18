@@ -4,8 +4,6 @@ Companion to [sso-saml-nodejs](https://github.com/alinabilali/sso-saml-nodejs): 
 (landing, home, admin-only page 1, all-users page 2), but authenticating with the OIDC
 authorization code flow via `openid-client` (endpoints auto-discovered, PKCE S256 enabled).
 
-> **Status:** reference implementation. It follows the standard flow and the redirect step has been
-> checked, but it has not been run against a live identity provider.
 
 ## How it works
 1. `GET /login` redirects the browser to the provider's authorization endpoint with `client_id`,
